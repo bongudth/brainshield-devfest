@@ -1,4 +1,6 @@
 import React from "react"
+import "../assets/scss/Header.scss"
+import { Button } from 'antd'
 import GoogleLogin from 'react-google-login'
 
 const handleLogin = async googleData => {
@@ -13,17 +15,21 @@ const handleLogin = async googleData => {
   })
   const data = await res.json()
   console.log(data)
+  console.log(googleData)
 }
 
 const Header = () => {
   return (
-    <GoogleLogin
-      clientId="747812372260-8grkkgva5v847ksiag5vuo9gdvknuu7g.apps.googleusercontent.com"
-      buttonText="Log in with Google"
-      onSuccess={handleLogin}
-      onFailure={handleLogin}
-      cookiePolicy={'single_host_origin'}
-    />
+    <div className="header-container">
+      <Button className="new-product-button">New product</Button>
+      <GoogleLogin
+        clientId="747812372260-8grkkgva5v847ksiag5vuo9gdvknuu7g.apps.googleusercontent.com"
+        buttonText="Log in with Google"
+        onSuccess={handleLogin}
+        onFailure={handleLogin}
+        cookiePolicy={'single_host_origin'}
+      />
+    </div>
   )
 }
 
