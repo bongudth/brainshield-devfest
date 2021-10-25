@@ -1,24 +1,25 @@
 import React from 'react'
+import "../assets/scss/ExploreProducts.scss"
 import { Card, Avatar } from 'antd'
-import { HeartOutlined, CommentOutlined, MoreOutlined } from '@ant-design/icons'
+import { LikeOutlined, CoffeeOutlined, CrownOutlined } from '@ant-design/icons'
 
 const ExploreProducts = () => {
   const { Meta } = Card
 
   return (
-    <div style={{ margin: "2rem 8rem", display: "flex", flexWrap: "wrap" }}>
+    <div className="card-list">
       <Card
-        style={{ margin: "0.4rem" }}
+        className="card-item"
         cover={
           <img
             alt="example"
-            src="https://picsum.photos/300/250"
+            src="https://picsum.photos/300/250?sig=1"
           />
         }
         actions={[
-          <HeartOutlined key="heart" />,
-          <CommentOutlined key="comment" />,
-          <MoreOutlined key="more" />,
+          <LikeOutlined key="like" />,
+          <CoffeeOutlined key="coffee" />,
+          <CrownOutlined key="save" />,
         ]}
       >
         <Meta
@@ -28,17 +29,17 @@ const ExploreProducts = () => {
         />
       </Card>
       <Card
-        style={{ margin: "0.4rem" }}
+        className="card-item"
         cover={
           <img
             alt="example"
-            src="https://picsum.photos/300/250"
+            src="https://picsum.photos/300/250?sig=2"
           />
         }
         actions={[
-          <HeartOutlined key="heart" />,
-          <CommentOutlined key="comment" />,
-          <MoreOutlined key="more" />,
+          <LikeOutlined key="like" />,
+          <CoffeeOutlined key="coffee" />,
+          <CrownOutlined key="save" />,
         ]}
       >
         <Meta
@@ -48,17 +49,17 @@ const ExploreProducts = () => {
         />
       </Card>
       <Card
-        style={{ margin: "0.4rem" }}
+        className="card-item"
         cover={
           <img
             alt="example"
-            src="https://picsum.photos/300/250"
+            src="https://picsum.photos/300/250?sig=3"
           />
         }
         actions={[
-          <HeartOutlined key="heart" />,
-          <CommentOutlined key="comment" />,
-          <MoreOutlined key="more" />,
+          <LikeOutlined key="like" />,
+          <CoffeeOutlined key="coffee" />,
+          <CrownOutlined key="save" />,
         ]}
       >
         <Meta
@@ -68,17 +69,17 @@ const ExploreProducts = () => {
         />
       </Card>
       <Card
-        style={{ margin: "0.4rem" }}
+        className="card-item"
         cover={
           <img
             alt="example"
-            src="https://picsum.photos/300/250"
+            src="https://picsum.photos/300/250?sig=4"
           />
         }
         actions={[
-          <HeartOutlined key="heart" />,
-          <CommentOutlined key="comment" />,
-          <MoreOutlined key="more" />,
+          <LikeOutlined key="like" />,
+          <CoffeeOutlined key="coffee" />,
+          <CrownOutlined key="save" />,
         ]}
       >
         <Meta
@@ -88,17 +89,17 @@ const ExploreProducts = () => {
         />
       </Card>
       <Card
-        style={{ margin: "0.4rem" }}
+        className="card-item"
         cover={
           <img
             alt="example"
-            src="https://picsum.photos/300/250"
+            src="https://picsum.photos/300/250?sig=5"
           />
         }
         actions={[
-          <HeartOutlined key="heart" />,
-          <CommentOutlined key="comment" />,
-          <MoreOutlined key="more" />,
+          <LikeOutlined key="like" />,
+          <CoffeeOutlined key="coffee" />,
+          <CrownOutlined key="save" />,
         ]}
       >
         <Meta
@@ -108,17 +109,17 @@ const ExploreProducts = () => {
         />
       </Card>
       <Card
-        style={{ margin: "0.4rem" }}
+        className="card-item"
         cover={
           <img
             alt="example"
-            src="https://picsum.photos/300/250"
+            src="https://picsum.photos/300/250?sig=6"
           />
         }
         actions={[
-          <HeartOutlined key="heart" />,
-          <CommentOutlined key="comment" />,
-          <MoreOutlined key="more" />,
+          <LikeOutlined key="like" />,
+          <CoffeeOutlined key="coffee" />,
+          <CrownOutlined key="save" />,
         ]}
       >
         <Meta
@@ -128,17 +129,17 @@ const ExploreProducts = () => {
         />
       </Card>
       <Card
-        style={{ margin: "0.4rem" }}
+        className="card-item"
         cover={
           <img
             alt="example"
-            src="https://picsum.photos/300/250"
+            src="https://picsum.photos/300/250?sig=7"
           />
         }
         actions={[
-          <HeartOutlined key="heart" />,
-          <CommentOutlined key="comment" />,
-          <MoreOutlined key="more" />,
+          <LikeOutlined key="like" />,
+          <CoffeeOutlined key="coffee" />,
+          <CrownOutlined key="save" />,
         ]}
       >
         <Meta

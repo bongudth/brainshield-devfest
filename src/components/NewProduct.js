@@ -1,4 +1,5 @@
 import React from 'react'
+import "../assets/scss/NewProduct.scss"
 import { Form, Input, Select, Upload, Button } from 'antd'
 import { InboxOutlined } from '@ant-design/icons'
 
@@ -29,7 +30,7 @@ const NewProduct = () => {
       layout="vertical"
       onFinish={onFinish}
       validateMessages={validateMessages}
-      style={{ margin: "2rem 20rem" }}
+      className="new-product-container"
     >
       <Form.Item
         name="name"

@@ -12,10 +12,10 @@ function App() {
       </header>
       <main>
         <Switch>
-          <Route path="/" exact>
+          <Route path="/explore" exact>
             <ExploreProducts />
           </Route>
-          <Route path="/new-product">
+          <Route path="/new">
             <NewProduct />
           </Route>
         </Switch>

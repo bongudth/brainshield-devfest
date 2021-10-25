@@ -1,26 +1,40 @@
+@import "./Variables.scss";
+
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  margin: 0 10rem;
+  margin: 2rem 10rem;
 
   .branch-container {
     display: flex;
     align-items: center;
-    
-      .logo {
-        width: 3rem;
-        margin-right: 0.5rem;
+
+    .logo {
+      width: 4rem;
+      margin-right: 0.5rem;
+    }
+
+    .brainshield {
+      color: $fiord;
+      font-size: 2rem;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: $lynch;
       }
-      
-      .brainshield {
-        font-size: 2rem;
-        font-weight: bold;
-      }
+    }
   }
 
-  .new-product-button {
+  .button {
     margin-right: 0.5rem;
+
+    &:hover,
+    &:focus {
+      color: $fiord;
+      border-color: $fiord;
+    }
   }
 }
