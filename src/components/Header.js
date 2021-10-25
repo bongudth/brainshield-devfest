@@ -4,8 +4,16 @@ import { Link } from "react-router-dom"
 import logo from "../assets/images/logo.png"
 import metamask from "../assets/images/metamask.png"
 import { Button } from 'antd'
+import { useEthers, useEtherBalance } from "@usedapp/core"
 
 const Header = () => {
+  const { activateBrowserWallet, account } = useEthers()
+  const etherBalance = useEtherBalance(account)
+
+  function handleConnectWallet() {
+    activateBrowserWallet();
+  }
+
   return (
     <div className="header-container">
       <Link to="/">
@@ -21,11 +29,14 @@ const Header = () => {
         <Link to="/new">
           <Button className="button">New product</Button>
         </Link>
-        <Link to="/">
-          <Button className="button metamask">
+        {account ? (
+          <div>{etherBalance && JSON.stringify(etherBalance)} ETH</div>
+        ) : (
+          <Button className="button metamask" onClick={handleConnectWallet}>
             <img src={metamask} alt="metamask" />
           </Button>
-        </Link>
+        )
+        }
       </div>
     </div>
   )

@@ -4,10 +4,13 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import 'antd/dist/antd.css'
+import { DAppProvider } from '@usedapp/core'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DAppProvider config={{}}>
+      <App />
+    </DAppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@usedapp/core": "^0.5.4",
     "antd": "^4.16.13",
     "axios": "^0.23.0",
     "google-auth-library": "^7.10.1",
