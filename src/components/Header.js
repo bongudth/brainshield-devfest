@@ -3,8 +3,9 @@ import "../assets/scss/Header.scss"
 import { Link } from "react-router-dom"
 import logo from "../assets/images/logo.png"
 import metamask from "../assets/images/metamask.png"
-import { Button } from 'antd'
+import { Button, Badge, Card } from 'antd'
 import { useEthers, useEtherBalance } from "@usedapp/core"
+import { formatEther } from "@ethersproject/units"
 
 const Header = () => {
   const { activateBrowserWallet, account } = useEthers()
@@ -30,7 +31,17 @@ const Header = () => {
           <Button className="button">New product</Button>
         </Link>
         {account ? (
-          <div>{etherBalance && JSON.stringify(etherBalance)} ETH</div>
+          <Badge.Ribbon text={etherBalance && parseFloat(formatEther(etherBalance)).toFixed(3) + "ETH"} color="#395266">
+            <Card size="small" className="account-container">
+              <div className="account">
+                {account &&
+                  `${account.slice(0, 6)}...${account.slice(
+                    account.length - 4,
+                    account.length
+                  )}`}
+              </div>
+            </Card>
+          </Badge.Ribbon>
         ) : (
           <Button className="button metamask" onClick={handleConnectWallet}>
             <img src={metamask} alt="metamask" />
