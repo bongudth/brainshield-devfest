@@ -59,7 +59,7 @@ const NewProduct = () => {
         ]}
       >
         <Select
-          value="Art"
+          defaultValue="Art"
         >
           <Option value="art">Art</Option>
           <Option value="music">Music</Option>
