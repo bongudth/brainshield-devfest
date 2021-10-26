@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-		"@emotion/react": "^11.5.0",
+        "@emotion/react": "^11.5.0",
         "@emotion/styled": "^11.3.0",
         "@metamask/jazzicon": "^2.0.0",
         "@testing-library/jest-dom": "^5.11.4",
@@ -48,5 +48,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0"
     }
 }

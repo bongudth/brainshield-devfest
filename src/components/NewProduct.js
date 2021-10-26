@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 import "../assets/scss/NewProduct.scss";
@@ -43,18 +44,18 @@ const NewProduct = () => {
         setTopicState(value);
     };
 
-	const uploadHandler = (file) => {
-		const reader = new window.FileReader();
-		// console.log(file);
+    const uploadHandler = (file) => {
+        const reader = new window.FileReader();
+        // console.log(file);
         reader.readAsArrayBuffer(file);
-		reader.onloadend = () => {
-			setBufferState(Buffer(reader.result));
-		};
-		console.log(bufferState);
+        reader.onloadend = () => {
+            setBufferState(Buffer(reader.result));
+        };
+        console.log(bufferState);
 
         // Prevent upload
         return false;
-	}
+    };
 
     return (
         <Form
@@ -114,9 +115,9 @@ const NewProduct = () => {
                     name="dragger"
                     action="/upload.do"
                     accept=".png, .jpg, .jpeg"
-					beforeUpload={uploadHandler}
-					multiple={false}
-					maxCount={1}
+                    beforeUpload={uploadHandler}
+                    multiple={false}
+                    maxCount={1}
                 >
                     <p className="ant-upload-drag-icon">
                         <InboxOutlined />
