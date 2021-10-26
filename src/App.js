@@ -5,6 +5,7 @@ import Web3 from "web3";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import ExploreProducts from "./components/ExploreProducts";
+import MyProducts from "./components/MyProducts";
 import NewProduct from "./components/NewProduct";
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
                         </Route>
                         <Route path="/explore" exact>
                             <ExploreProducts />
+                        </Route>
+                        <Route path="/mine">
+                            <MyProducts />
                         </Route>
                         <Route path="/new">
                             <NewProduct />
