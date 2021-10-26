@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
+import Web3 from "web3";
 import "../assets/scss/NewProduct.scss";
 import { Form, Input, Select, Upload, Button } from "antd";
 import { InboxOutlined } from "@ant-design/icons";
 
 const NewProduct = () => {
-	
     const [form] = Form.useForm();
     const { Option } = Select;
-	const [nameState, setNameState] = useState("");
-	const [descriptionState, setDescriptionState] = useState("");
-	const [topicState, setTopicState] = useState("");
-	const [bufferState, setBufferState] = useState("");
+    const [nameState, setNameState] = useState("");
+    const [descriptionState, setDescriptionState] = useState("");
+    const [topicState, setTopicState] = useState("");
+    const [bufferState, setBufferState] = useState("");
 
     const normFile = (e) => {
-        console.log("Upload event:", e);
+        // console.log("Upload event:", e);
         if (Array.isArray(e)) {
             return e;
         }
@@ -29,9 +29,32 @@ const NewProduct = () => {
         console.log("Received values of form: ", values);
     };
 
-	const onChangeName = (event) => {
-		setNameState(event.target.value);
-	};
+    const onChangeName = (event) => {
+        setNameState(event.target.value);
+    };
+
+    const onChangeDescription = (event) => {
+        console.log(event.target.value);
+        setDescriptionState(event.target.value);
+    };
+
+    const onChangeTopic = (value) => {
+        console.log(value);
+        setTopicState(value);
+    };
+
+	const uploadHandler = (file) => {
+		const reader = new window.FileReader();
+		// console.log(file);
+        reader.readAsArrayBuffer(file);
+		reader.onloadend = () => {
+			setBufferState(Buffer(reader.result));
+		};
+		console.log(bufferState);
+
+        // Prevent upload
+        return false;
+	}
 
     return (
         <Form
@@ -50,10 +73,16 @@ const NewProduct = () => {
                     },
                 ]}
             >
-                <Input onChange={onChangeName} placeholder="Input your product's name..." />
+                <Input
+                    onChange={onChangeName}
+                    placeholder="Input your product's name..."
+                />
             </Form.Item>
             <Form.Item name="description" label="Description">
-                <Input.TextArea placeholder="Input product's description..." />
+                <Input.TextArea
+                    onChange={onChangeDescription}
+                    placeholder="Input product's description..."
+                />
             </Form.Item>
             <Form.Item
                 name="topic"
@@ -64,7 +93,7 @@ const NewProduct = () => {
                     },
                 ]}
             >
-                <Select defaultValue="Art">
+                <Select onChange={onChangeTopic} defaultValue="Art">
                     <Option value="art">Art</Option>
                     <Option value="music">Music</Option>
                     <Option value="blog">Blog</Option>
@@ -81,7 +110,14 @@ const NewProduct = () => {
                     },
                 ]}
             >
-                <Upload.Dragger name="dragger" action="/upload.do">
+                <Upload.Dragger
+                    name="dragger"
+                    action="/upload.do"
+                    accept=".png, .jpg, .jpeg"
+					beforeUpload={uploadHandler}
+					multiple={false}
+					maxCount={1}
+                >
                     <p className="ant-upload-drag-icon">
                         <InboxOutlined />
                     </p>
