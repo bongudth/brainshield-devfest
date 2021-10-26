@@ -42,8 +42,21 @@
       }
     }
 
+    .account-button {
+      cursor: pointer;
+    }
+
     .account-container {
       border-color: $fiord;
+    }
+    
+    .ant-card-body {
+      display: flex;
+      align-items: center;
+
+      .css-f5n5mq {
+        margin-right: 0.5rem;
+      }
     }
 
     .account {
@@ -61,6 +74,59 @@
       img {
         width: 2rem;
       }
+    }
+  }
+}
+
+.modal-container {
+  color: $fiord;
+
+  .modal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .modal-content {
+    display: flex;
+    align-items: center;
+    border: 1px solid $fiord;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin: 1rem auto;
+
+    .account {
+      margin-left: 0.5rem;
+    }
+  }
+  
+  .modal-button {
+    display: flex;
+    flex-direction: column;
+
+    .button {
+      width: 100%;
+    }
+
+    a {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .modal-bottom {
+    background-color: $lynch;
+    color: $jungle-mist;
+    border: 1px solid $fiord;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .button {
+    &:hover,
+    &:focus {
+      color: $fiord;
+      border-color: $fiord;
     }
   }
 }
