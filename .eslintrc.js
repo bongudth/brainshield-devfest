@@ -8,10 +8,14 @@ module.exports = {
         sourceType: "module",
         allowImportExportEverywhere: true,
         ecmaVersion: 12,
+        requireConfigFile: false,
+        babelOptions: {
+            presets: ["@babel/preset-react"],
+        },
     },
     rules: {
         semi: ["error", "always"],
         quotes: ["error", "double"],
     },
-	parser: '@babel/eslint-parser',
+    parser: "@babel/eslint-parser",
 };
