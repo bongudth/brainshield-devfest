@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@metamask/jazzicon": "^2.0.0",
     "@testing-library/jest-dom": "^5.11.4",
