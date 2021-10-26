@@ -58,10 +58,6 @@
         margin-right: 0.5rem;
       }
     }
-
-    .account {
-      margin-right: 4rem;
-    }
   
     .metamask {
       width: 2.5rem;
@@ -94,10 +90,6 @@
     border-radius: 4px;
     padding: 0.5rem;
     margin: 1rem auto;
-
-    .account {
-      margin-left: 0.5rem;
-    }
   }
   
   .modal-button {
@@ -129,4 +121,9 @@
       border-color: $fiord;
     }
   }
+}
+
+.account {
+  margin-left: 0.5rem;
+  margin-right: 4rem;
 }
