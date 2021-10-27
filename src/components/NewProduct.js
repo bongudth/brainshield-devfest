@@ -19,7 +19,7 @@ const NewProduct = () => {
     const { Option } = Select;
     const [nameState, setNameState] = useState("");
     const [descriptionState, setDescriptionState] = useState("");
-    const [topicState, setTopicState] = useState("");
+    const [topicState, setTopicState] = useState("art");
     const [fileState, setFileState] = useState("");
 
     const normFile = (e) => {
