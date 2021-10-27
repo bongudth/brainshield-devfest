@@ -33,4 +33,5 @@ const useAssetsCall = (index) => {
 		}) ?? [];
 	return [id, accountAddress, ipfsHash, name, description, vote];
 };
+
 export {useCount, useAssetsCall, useContractMethod};
