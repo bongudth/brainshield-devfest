@@ -12,7 +12,7 @@ const ExploreProducts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://picsum.photos/300/250?sig=1"
+                        src="https://picsum.photos/300/200?sig=1"
                     />
                 }
             >

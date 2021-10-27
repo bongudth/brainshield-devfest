@@ -13,7 +13,7 @@ const ExploreProducts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://picsum.photos/300/250?sig=1"
+                        src="https://picsum.photos/300/200?sig=1"
                     />
                 }
                 actions={[
@@ -33,7 +33,7 @@ const ExploreProducts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://picsum.photos/300/250?sig=2"
+                        src="https://picsum.photos/300/200?sig=2"
                     />
                 }
                 actions={[
@@ -53,7 +53,7 @@ const ExploreProducts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://picsum.photos/300/250?sig=3"
+                        src="https://picsum.photos/300/200?sig=3"
                     />
                 }
                 actions={[
@@ -73,7 +73,7 @@ const ExploreProducts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://picsum.photos/300/250?sig=4"
+                        src="https://picsum.photos/300/200?sig=4"
                     />
                 }
                 actions={[
@@ -93,7 +93,7 @@ const ExploreProducts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://picsum.photos/300/250?sig=5"
+                        src="https://picsum.photos/300/200?sig=5"
                     />
                 }
                 actions={[
@@ -113,7 +113,7 @@ const ExploreProducts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://picsum.photos/300/250?sig=6"
+                        src="https://picsum.photos/300/200?sig=6"
                     />
                 }
                 actions={[
@@ -133,7 +133,7 @@ const ExploreProducts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://picsum.photos/300/250?sig=7"
+                        src="https://picsum.photos/300/200?sig=7"
                     />
                 }
                 actions={[
