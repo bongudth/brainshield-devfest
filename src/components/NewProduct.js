@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import { useCount, useContractMethod } from "../hooks/index";
+import { useEthers } from "@usedapp/core";
+import { useContractMethod } from "../hooks/index";
 import "../assets/scss/NewProduct.scss";
 import { Form, Input, Select, Upload, Button } from "antd";
 import { InboxOutlined } from "@ant-design/icons";
@@ -13,6 +14,8 @@ const client = create("https://ipfs.infura.io:5001/api/v0");
 
 const NewProduct = () => {
     const [form] = Form.useForm();
+	const { account } = useEthers();
+
     const { Option } = Select;
     const [nameState, setNameState] = useState("");
     const [descriptionState, setDescriptionState] = useState("");
@@ -37,9 +40,8 @@ const NewProduct = () => {
         const IpfsFileHandler = async () => {
             try {
                 const added = await client.add(fileState);
-                console.log(`https://ipfs.infura.io/ipfs/${added.path}`);
 				ipfsInfo = added.path;
-				createPictureHandler(ipfsInfo, nameState, descriptionState);
+				createPictureHandler(account, ipfsInfo, nameState, descriptionState);
             } catch (error) {
                 console.log("Error uploading file: ", error);
             }
@@ -52,12 +54,10 @@ const NewProduct = () => {
     };
 
     const onChangeDescription = (event) => {
-        console.log(event.target.value);
         setDescriptionState(event.target.value);
     };
 
     const onChangeTopic = (value) => {
-        console.log(value);
         setTopicState(value);
     };
 
@@ -68,9 +68,8 @@ const NewProduct = () => {
     const { state: createPictureState, send: createPicture } =
         useContractMethod("createPicture");
 
-    const createPictureHandler = (ipfsHash, name, description) => {
-		console.log(ipfsHash, name, description);
-        createPicture(ipfsHash, name, description, 0);
+    const createPictureHandler = (account,ipfsHash,  name, description) => {
+        createPicture(account, ipfsHash, name, description, 0);
     }
 
     return (

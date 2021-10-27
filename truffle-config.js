@@ -1,6 +1,6 @@
 const HDWalletProvider = require("truffle-hdwallet-provider");
 const mnemonic =
-    "ball once void parent unhappy jump wool group magic assist total estate boy wash panther";
+    "tilt anxiety eager smile output range casino lab coffee journey loyal core";
 
 module.exports = {
     networks: {
@@ -13,7 +13,7 @@ module.exports = {
             provider: function () {
                 return new HDWalletProvider(
                     mnemonic,
-                    "https://ropsten.infura.io/v3/241f03331919423cba6145c7a2bcc61a"
+                    "https://ropsten.infura.io/v3/241f03331919423cba6145c7a2bcc61a",
                 );
             },
 			// from: "0xB94853CD3d617B1294DA4Dd6000a98E5D047FAf7",
