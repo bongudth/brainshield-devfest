@@ -19,7 +19,7 @@ const CartProduct = (props) => {
         useContractMethod("votePicture");
 
     const clickVoteHandler = () => {
-        if (accountAddress === account) {
+        if (accountAddress.toLowerCase() === account.toLowerCase()) {
             return;
         }
         votePicture(props.id);
@@ -29,7 +29,7 @@ const CartProduct = (props) => {
         transactionName: "Send Ethereum",
     });
     const clickDonateHandler = () => {
-        if (accountAddress === account) {
+        if (accountAddress.toLowerCase() === account.toLowerCase()) {
             return;
         }
         setIsModalVisible(true);
