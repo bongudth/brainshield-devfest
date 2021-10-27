@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import ExploreProducts from "./components/ExploreProducts";
+import MyProducts from "./components/MyProducts";
 import NewProduct from "./components/NewProduct";
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
                         </Route>
                         <Route path="/explore" exact>
                             <ExploreProducts />
+                        </Route>
+                        <Route path="/mine">
+                            <MyProducts />
                         </Route>
                         <Route path="/new">
                             <NewProduct />

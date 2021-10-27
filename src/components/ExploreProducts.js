@@ -3,7 +3,6 @@ import CardProduct from "./CartProduct";
 import { useCount } from "../hooks/index";
 
 const ExploreProducts = () => {
-
     const count = useCount();
 
 	let pictureAsset = [];
@@ -17,6 +16,7 @@ const ExploreProducts = () => {
     // console.log(asset);
 
     return <div className="card-list">{pictureAsset}</div>;
+
 };
 
 export default ExploreProducts;

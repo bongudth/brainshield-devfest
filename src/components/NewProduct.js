@@ -95,7 +95,15 @@ const NewProduct = () => {
                     placeholder="Input your product's name..."
                 />
             </Form.Item>
-            <Form.Item name="description" label="Description">
+            <Form.Item
+                name="description"
+                label="Description"
+                rules={[
+                    {
+                        required: true,
+                    },
+                ]}
+            >
                 <Input.TextArea
                     onChange={onChangeDescription}
                     placeholder="Input product's description..."

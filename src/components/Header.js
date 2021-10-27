@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import React, { useState } from "react";
 import "../assets/scss/Header.scss";
 import { Link } from "react-router-dom";
@@ -43,7 +42,7 @@ const Header = () => {
             <div className="header-right">
                 <Modal
                     title="Account"
-                    width={300}
+                    width={350}
                     visible={isModalVisible}
                     onCancel={handleCancel}
                     footer={null}
@@ -62,7 +61,7 @@ const Header = () => {
                         <Identicon />
                         <div className="account">
                             {account &&
-                                `${account.slice(0, 6)}...${account.slice(
+                                `${account.slice(0, 20)}...${account.slice(
                                     account.length - 4,
                                     account.length
                                 )}`}
@@ -72,7 +71,7 @@ const Header = () => {
                         <Button icon={<CopyOutlined />} className="button">
                             Copy address
                         </Button>
-                        <a href="https://ropsten.etherscan.io/address/${account}">
+                        <a href={`https://ropsten.etherscan.io/address/${account}`} target="_blank" rel="noreferrer">
                             <Button
                                 icon={<FolderViewOutlined />}
                                 className="button"
@@ -88,45 +87,54 @@ const Header = () => {
                 <Link to="/explore">
                     <Button className="button">Explore products</Button>
                 </Link>
+                {
+                    account ? (
+                        <Link to="/mine">
+                            <Button className="button">My products</Button>
+                        </Link>
+                    ) : null
+                }
                 <Link to="/new">
                     <Button className="button">New product</Button>
                 </Link>
-                {account ? (
-                    <div onClick={showModal} className="account-button">
-                        <Badge.Ribbon
-                            text={
-                                etherBalance &&
-                                parseFloat(formatEther(etherBalance)).toFixed(
-                                    3
-                                ) + "ETH"
-                            }
-                            color="#395266"
+                {
+                    account ? (
+                        <div onClick={showModal} className="account-button">
+                            <Badge.Ribbon
+                                text={
+                                    etherBalance &&
+                                    parseFloat(formatEther(etherBalance)).toFixed(
+                                        3
+                                    ) + "ETH"
+                                }
+                                color="#395266"
+                            >
+                                <Card size="small" className="account-container">
+                                    <Identicon />
+                                    <div className="account">
+                                        {account &&
+                                            `${account.slice(
+                                                0,
+                                                6
+                                            )}...${account.slice(
+                                                account.length - 4,
+                                                account.length
+                                            )}`}
+                                    </div>
+                                </Card>
+                            </Badge.Ribbon>
+                        </div>
+                    ) : (
+                        <Button
+                            className="button metamask"
+                            onClick={handleConnectWallet}
                         >
-                            <Card size="small" className="account-container">
-                                <Identicon />
-                                <div className="account">
-                                    {account &&
-                                        `${account.slice(
-                                            0,
-                                            6
-                                        )}...${account.slice(
-                                            account.length - 4,
-                                            account.length
-                                        )}`}
-                                </div>
-                            </Card>
-                        </Badge.Ribbon>
-                    </div>
-                ) : (
-                    <Button
-                        className="button metamask"
-                        onClick={handleConnectWallet}
-                    >
-                        <img src={metamask} alt="metamask" />
-                    </Button>
-                )}
-            </div>
-        </div>
+                            <img src={metamask} alt="metamask" />
+                        </Button>
+                    )
+                }
+            </div >
+        </div >
     );
 };
 
