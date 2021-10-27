@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import { useCount, useContractMethod } from "../hook/index";
+import { useCount, useContractMethod } from "../hooks/index";
 import "../assets/scss/NewProduct.scss";
 import { Form, Input, Select, Upload, Button } from "antd";
 import { InboxOutlined } from "@ant-design/icons";

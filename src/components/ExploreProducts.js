@@ -1,6 +1,6 @@
 import React from "react";
 import CardProduct from "./CartProduct";
-import { useCount } from "../hook/index";
+import { useCount } from "../hooks/index";
 
 const ExploreProducts = () => {
 

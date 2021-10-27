@@ -1,5 +1,5 @@
 import React from "react";
-import { useAssetsCall } from "../hook/index";
+import { useAssetsCall } from "../hooks/index";
 import "../assets/scss/ExploreProducts.scss";
 import { Card, Avatar } from "antd";
 import { LikeOutlined, CoffeeOutlined, CrownOutlined } from "@ant-design/icons";
