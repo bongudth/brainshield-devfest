@@ -1,155 +1,22 @@
 import React from "react";
-import "../assets/scss/ExploreProducts.scss";
-import { Card, Avatar } from "antd";
-import { LikeOutlined, CoffeeOutlined, CrownOutlined } from "@ant-design/icons";
+import CardProduct from "./CartProduct";
+import { useCount } from "../hook/index";
 
 const ExploreProducts = () => {
-    const { Meta } = Card;
 
-    return (
-        <div className="card-list">
-            <Card
-                className="card-item"
-                cover={
-                    <img
-                        alt="example"
-                        src="https://picsum.photos/300/250?sig=1"
-                    />
-                }
-                actions={[
-                    <LikeOutlined key="like" />,
-                    <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
-                ]}
-            >
-                <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                    title="Card title"
-                    description="This is the description"
-                />
-            </Card>
-            <Card
-                className="card-item"
-                cover={
-                    <img
-                        alt="example"
-                        src="https://picsum.photos/300/250?sig=2"
-                    />
-                }
-                actions={[
-                    <LikeOutlined key="like" />,
-                    <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
-                ]}
-            >
-                <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                    title="Card title"
-                    description="This is the description"
-                />
-            </Card>
-            <Card
-                className="card-item"
-                cover={
-                    <img
-                        alt="example"
-                        src="https://picsum.photos/300/250?sig=3"
-                    />
-                }
-                actions={[
-                    <LikeOutlined key="like" />,
-                    <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
-                ]}
-            >
-                <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                    title="Card title"
-                    description="This is the description"
-                />
-            </Card>
-            <Card
-                className="card-item"
-                cover={
-                    <img
-                        alt="example"
-                        src="https://picsum.photos/300/250?sig=4"
-                    />
-                }
-                actions={[
-                    <LikeOutlined key="like" />,
-                    <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
-                ]}
-            >
-                <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                    title="Card title"
-                    description="This is the description"
-                />
-            </Card>
-            <Card
-                className="card-item"
-                cover={
-                    <img
-                        alt="example"
-                        src="https://picsum.photos/300/250?sig=5"
-                    />
-                }
-                actions={[
-                    <LikeOutlined key="like" />,
-                    <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
-                ]}
-            >
-                <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                    title="Card title"
-                    description="This is the description"
-                />
-            </Card>
-            <Card
-                className="card-item"
-                cover={
-                    <img
-                        alt="example"
-                        src="https://picsum.photos/300/250?sig=6"
-                    />
-                }
-                actions={[
-                    <LikeOutlined key="like" />,
-                    <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
-                ]}
-            >
-                <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                    title="Card title"
-                    description="This is the description"
-                />
-            </Card>
-            <Card
-                className="card-item"
-                cover={
-                    <img
-                        alt="example"
-                        src="https://picsum.photos/300/250?sig=7"
-                    />
-                }
-                actions={[
-                    <LikeOutlined key="like" />,
-                    <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
-                ]}
-            >
-                <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                    title="Card title"
-                    description="This is the description"
-                />
-            </Card>
-        </div>
-    );
+    const count = useCount();
+
+	let pictureAsset = [];
+    if (count) {
+        console.log(count.toNumber());
+        for (let i = 1; i <= count.toNumber(); i++) {
+            pictureAsset.push(<CardProduct id={i}/>)
+        }
+    }
+
+    // console.log(asset);
+
+    return <div className="card-list">{pictureAsset}</div>;
 };
 
 export default ExploreProducts;

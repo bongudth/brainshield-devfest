@@ -1,9 +1,15 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
-import Web3 from "web3";
+import { useCount, useContractMethod } from "../hook/index";
 import "../assets/scss/NewProduct.scss";
 import { Form, Input, Select, Upload, Button } from "antd";
 import { InboxOutlined } from "@ant-design/icons";
+
+/* import the ipfs-http-client library */
+import { create } from "ipfs-http-client";
+
+/* Create an instance of the client */
+const client = create("https://ipfs.infura.io:5001/api/v0");
 
 const NewProduct = () => {
     const [form] = Form.useForm();
@@ -11,7 +17,7 @@ const NewProduct = () => {
     const [nameState, setNameState] = useState("");
     const [descriptionState, setDescriptionState] = useState("");
     const [topicState, setTopicState] = useState("");
-    const [bufferState, setBufferState] = useState("");
+    const [fileState, setFileState] = useState("");
 
     const normFile = (e) => {
         // console.log("Upload event:", e);
@@ -27,7 +33,18 @@ const NewProduct = () => {
     };
 
     const onFinish = (values) => {
-        console.log("Received values of form: ", values);
+		let ipfsInfo = "";
+        const IpfsFileHandler = async () => {
+            try {
+                const added = await client.add(fileState);
+                console.log(`https://ipfs.infura.io/ipfs/${added.path}`);
+				ipfsInfo = added.path;
+				createPictureHandler(ipfsInfo, nameState, descriptionState);
+            } catch (error) {
+                console.log("Error uploading file: ", error);
+            }
+        };
+        IpfsFileHandler();
     };
 
     const onChangeName = (event) => {
@@ -45,17 +62,16 @@ const NewProduct = () => {
     };
 
     const uploadHandler = (file) => {
-        const reader = new window.FileReader();
-        // console.log(file);
-        reader.readAsArrayBuffer(file);
-        reader.onloadend = () => {
-            setBufferState(Buffer(reader.result));
-        };
-        console.log(bufferState);
-
-        // Prevent upload
-        return false;
+        setFileState(file);
     };
+
+    const { state: createPictureState, send: createPicture } =
+        useContractMethod("createPicture");
+
+    const createPictureHandler = (ipfsHash, name, description) => {
+		console.log(ipfsHash, name, description);
+        createPicture(ipfsHash, name, description, 0);
+    }
 
     return (
         <Form
@@ -83,6 +99,7 @@ const NewProduct = () => {
                 <Input.TextArea
                     onChange={onChangeDescription}
                     placeholder="Input product's description..."
+                    required
                 />
             </Form.Item>
             <Form.Item
@@ -114,10 +131,11 @@ const NewProduct = () => {
                 <Upload.Dragger
                     name="dragger"
                     action="/upload.do"
-                    accept=".png, .jpg, .jpeg"
                     beforeUpload={uploadHandler}
+                    accept=".png, .jpg, .jpeg"
                     multiple={false}
                     maxCount={1}
+                    status="done"
                 >
                     <p className="ant-upload-drag-icon">
                         <InboxOutlined />

@@ -9,16 +9,18 @@ module.exports = {
             port: 7545,
             network_id: "*", // Match any network id
         },
-        networks: {
-            ropsten: {
-                provider: function () {
-                    return new HDWalletProvider(
-                        mnemonic,
-                        "https://ropsten.infura.io/v3/241f03331919423cba6145c7a2bcc61a"
-                    );
-                },
-                network_id: 3,
+        ropsten: {
+            provider: function () {
+                return new HDWalletProvider(
+                    mnemonic,
+                    "https://ropsten.infura.io/v3/241f03331919423cba6145c7a2bcc61a"
+                );
             },
+			// from: "0xB94853CD3d617B1294DA4Dd6000a98E5D047FAf7",
+			// gas: "6500000",
+    		// gasPrice: "10000000000",
+			networkCheckTimeout: 10000,
+            network_id: "3",
         },
     },
     solc: {
