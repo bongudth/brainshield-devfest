@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/scss/ExploreProducts.scss";
-import { Card, Avatar } from "antd";
-import { LikeOutlined, CoffeeOutlined, CrownOutlined } from "@ant-design/icons";
+import { Card, Avatar, Tag } from "antd";
+import { LikeOutlined, CoffeeOutlined, DotChartOutlined, CrownOutlined, WalletOutlined } from "@ant-design/icons";
 
 const ExploreProducts = () => {
     const { Meta } = Card;
@@ -19,7 +19,7 @@ const ExploreProducts = () => {
                 actions={[
                     <LikeOutlined key="like" />,
                     <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
+                    <Tag icon={<DotChartOutlined />} color="orange">Art</Tag>
                 ]}
             >
                 <Meta
@@ -39,7 +39,7 @@ const ExploreProducts = () => {
                 actions={[
                     <LikeOutlined key="like" />,
                     <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
+                    <Tag icon={<CrownOutlined />} color="green">Music</Tag>
                 ]}
             >
                 <Meta
@@ -59,7 +59,7 @@ const ExploreProducts = () => {
                 actions={[
                     <LikeOutlined key="like" />,
                     <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
+                    <Tag icon={<DotChartOutlined />} color="orange">Art</Tag>
                 ]}
             >
                 <Meta
@@ -79,7 +79,7 @@ const ExploreProducts = () => {
                 actions={[
                     <LikeOutlined key="like" />,
                     <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
+                    <Tag icon={<WalletOutlined />} color="blue">Blog</Tag>
                 ]}
             >
                 <Meta
@@ -99,7 +99,7 @@ const ExploreProducts = () => {
                 actions={[
                     <LikeOutlined key="like" />,
                     <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
+                    <Tag icon={<DotChartOutlined />} color="orange">Art</Tag>
                 ]}
             >
                 <Meta
@@ -119,7 +119,7 @@ const ExploreProducts = () => {
                 actions={[
                     <LikeOutlined key="like" />,
                     <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
+                    <Tag icon={<WalletOutlined />} color="blue">Blog</Tag>
                 ]}
             >
                 <Meta
@@ -139,7 +139,7 @@ const ExploreProducts = () => {
                 actions={[
                     <LikeOutlined key="like" />,
                     <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
+                    <Tag icon={<WalletOutlined />} color="blue">Blog</Tag>
                 ]}
             >
                 <Meta
