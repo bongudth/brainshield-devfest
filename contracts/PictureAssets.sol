@@ -7,6 +7,7 @@ contract PictureAssets {
 
 	struct Picture {
 		uint id;
+		string accountAddress;
 		string ipfsInfo;
 		string name;
 		string description;
@@ -17,9 +18,15 @@ contract PictureAssets {
 
 	event PictureCreated (
 		uint id,
+		string accountAddress,
 		string ipfsInfo,
 		string name,
 		string description,
+		uint vote
+	);
+
+	event PictureVote (
+		uint id,
 		uint vote
 	);
 
@@ -27,11 +34,18 @@ contract PictureAssets {
 		// createPicture("Check out derektruong.com");
 	}
 
-	function createPicture(string memory ipfsInfo, string memory name, string memory description, uint vote) public {
+	function createPicture(string memory accountAddress, string memory ipfsInfo, string memory name, string memory description, uint vote) public {
 		pictureCount ++;
-		pictures[pictureCount] = Picture(pictureCount, ipfsInfo, name, description, vote);
+		pictures[pictureCount] = Picture(pictureCount, accountAddress, ipfsInfo, name, description, vote);
 
-		emit PictureCreated(pictureCount, ipfsInfo, name, description, vote);
+		emit PictureCreated(pictureCount, accountAddress, ipfsInfo, name, description, vote);
+	}
+
+	function votePicture(uint _id) public {
+		Picture memory _picture = pictures[_id];
+		_picture.vote ++;
+		pictures[_id] = _picture;
+		emit PictureVote(_id, _picture.vote);
 	}
 	
 }
