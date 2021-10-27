@@ -1,7 +1,6 @@
 import React from "react";
 import "../assets/scss/ExploreProducts.scss";
-import { Card, Avatar } from "antd";
-import { LikeOutlined, CoffeeOutlined, CrownOutlined } from "@ant-design/icons";
+import { Card } from "antd";
 
 const ExploreProducts = () => {
     const { Meta } = Card;
@@ -16,14 +15,8 @@ const ExploreProducts = () => {
                         src="https://picsum.photos/300/250?sig=1"
                     />
                 }
-                actions={[
-                    <LikeOutlined key="like" />,
-                    <CoffeeOutlined key="coffee" />,
-                    <CrownOutlined key="save" />,
-                ]}
             >
                 <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
                     title="Card title"
                     description="This is the description"
                 />
