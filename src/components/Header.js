@@ -42,7 +42,7 @@ const Header = () => {
             <div className="header-right">
                 <Modal
                     title="Account"
-                    width={300}
+                    width={350}
                     visible={isModalVisible}
                     onCancel={handleCancel}
                     footer={null}
