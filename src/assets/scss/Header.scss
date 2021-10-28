@@ -44,6 +44,10 @@
 
     .account-button {
       cursor: pointer;
+
+      .ant-card {
+        width: 200px !important;
+      }
     }
 
     .account-container {
