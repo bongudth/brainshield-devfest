@@ -8,6 +8,8 @@ const simpleContractInterface = new ethers.utils.Interface(PICTURE_LIST_ABI);
 const simpleContractAddress = PICTURE_LIST_ADDRESS;
 const contract = new Contract(simpleContractAddress, simpleContractInterface, provider);
 
+console.log(PICTURE_LIST_ADDRESS);
+
 const useCount = () => {
     const [count] =
         useContractCall({
