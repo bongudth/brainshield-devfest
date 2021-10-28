@@ -63,6 +63,7 @@ const NewProduct = () => {
 
     const uploadHandler = (file) => {
         setFileState(file);
+        return false;
     };
 
     const { state: createPictureState, send: createPicture } =
@@ -137,7 +138,6 @@ const NewProduct = () => {
             >
                 <Upload.Dragger
                     name="dragger"
-                    action="/upload.do"
                     beforeUpload={uploadHandler}
                     accept=".png, .jpg, .jpeg"
                     multiple={false}
