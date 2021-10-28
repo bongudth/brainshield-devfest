@@ -62,7 +62,7 @@ const CartProduct = (props) => {
     return (
         <React.Fragment>
             <Modal
-                title="Nhập lượng ETH cần donate"
+                title="Cảm ơn tấm lòng của bạn nha 💝"
                 visible={isModalVisible}
                 onOk={handleOk}
                 onCancel={handleCancel}
