@@ -14,7 +14,7 @@ const client = create("https://ipfs.infura.io:5001/api/v0");
 
 const NewProduct = () => {
     const [form] = Form.useForm();
-	const { account } = useEthers();
+    const { account } = useEthers();
 
     const { Option } = Select;
     const [nameState, setNameState] = useState("");
@@ -36,12 +36,12 @@ const NewProduct = () => {
     };
 
     const onFinish = (values) => {
-		let ipfsInfo = "";
+        let ipfsInfo = "";
         const IpfsFileHandler = async () => {
             try {
                 const added = await client.add(fileState);
-				ipfsInfo = added.path;
-				createPictureHandler(account, ipfsInfo, nameState, descriptionState);
+                ipfsInfo = added.path;
+                createPictureHandler(account, ipfsInfo, nameState, descriptionState);
             } catch (error) {
                 console.log("Error uploading file: ", error);
             }
@@ -68,7 +68,7 @@ const NewProduct = () => {
     const { state: createPictureState, send: createPicture } =
         useContractMethod("createPicture");
 
-    const createPictureHandler = (account,ipfsHash,  name, description) => {
+    const createPictureHandler = (account, ipfsHash, name, description) => {
         createPicture(account, ipfsHash, name, description, 0);
     }
 
@@ -82,7 +82,7 @@ const NewProduct = () => {
         >
             <Form.Item
                 name="name"
-                label="Name"
+                label="Tên sản phẩm"
                 rules={[
                     {
                         required: true,
@@ -91,12 +91,12 @@ const NewProduct = () => {
             >
                 <Input
                     onChange={onChangeName}
-                    placeholder="Input your product's name..."
+                    placeholder="Nhập tên sản phẩm của bạn..."
                 />
             </Form.Item>
             <Form.Item
                 name="description"
-                label="Description"
+                label="Mô tả sản phẩm"
                 rules={[
                     {
                         required: true,
@@ -105,23 +105,23 @@ const NewProduct = () => {
             >
                 <Input.TextArea
                     onChange={onChangeDescription}
-                    placeholder="Input product's description..."
+                    placeholder="Nhập mô tả sản phẩm của bạn..."
                     required
                 />
             </Form.Item>
             <Form.Item
                 name="topic"
-                label="Topic"
+                label="Chủ đề"
                 rules={[
                     {
                         required: true,
                     },
                 ]}
             >
-                <Select onChange={onChangeTopic} defaultValue="Art">
-                    <Option value="art">Art</Option>
-                    <Option value="music">Music</Option>
-                    <Option value="blog">Blog</Option>
+                <Select onChange={onChangeTopic}>
+                    <Option value="art">Tranh vẽ</Option>
+                    <Option value="music">Âm nhạc</Option>
+                    <Option value="photo">Nhiếp ảnh</Option>
                 </Select>
             </Form.Item>
             <Form.Item
@@ -148,16 +148,16 @@ const NewProduct = () => {
                         <InboxOutlined />
                     </p>
                     <p className="ant-upload-text">
-                        Click or drag file to this area to upload
+                        Click hoặc kéo file vào đây để tải lên
                     </p>
                     <p className="ant-upload-hint">
-                        Support for a single or bulk upload.
+                        Hỗ trợ cho tải lên một hoặc nhiều file
                     </p>
                 </Upload.Dragger>
             </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit">
-                    Submit
+                    Tạo
                 </Button>
             </Form.Item>
         </Form>
