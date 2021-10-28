@@ -1,8 +1,8 @@
 import React from "react";
+import "../../assets/scss/MyCard.scss"
 import { useEthers } from "@usedapp/core";
 
 import { useAssetsCall } from "../../hooks/index";
-import "../../assets/scss/ExploreProducts.scss";
 import { Card } from "antd";
 
 const MyCard = (props) => {
@@ -17,18 +17,17 @@ const MyCard = (props) => {
     }
 
     return (
-            <Card
-                key={props.id}
-                className="card-item"
-                cover={
-                    <img
-                        alt="sample asset"
-                        src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
-                    />
-                }
-            >
-                <Meta title={name} description={description} />
-            </Card>
+        <Card
+            key={props.id}
+            cover={
+                <img
+                    alt="sample asset"
+                    src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
+                />
+            }
+        >
+            <Meta title={name} description={description} />
+        </Card>
     );
 };
 
