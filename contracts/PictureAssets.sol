@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.7;
 
 // create contract for the PictureAssets with 4 field (id, name, description, vote)
 contract PictureAssets {
