@@ -3,7 +3,6 @@ import "../../assets/scss/MyCard.scss"
 import { useEthers } from "@usedapp/core";
 
 import { useAssetsCall } from "../../hooks/index";
-import "../../assets/scss/ExploreProducts.scss";
 import { Card } from "antd";
 
 const MyCard = (props) => {
