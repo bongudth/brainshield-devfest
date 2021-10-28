@@ -5,6 +5,7 @@ import "../../assets/scss/ExploreProducts.scss";
 import { Card, Avatar, Modal, Form, Input } from "antd";
 import { HeartTwoTone, CoffeeOutlined } from "@ant-design/icons";
 import { utils } from "ethers";
+import DetailProduct from "./DetailProduct";
 
 const CartProduct = (props) => {
     const { Meta } = Card;
@@ -87,41 +88,11 @@ const CartProduct = (props) => {
             <Modal
                 title="Chi tiết sản phẩm"
                 visible={isModalDetailVisible}
-                // onOk={handleDetailOk}
+                width="60%"
+                button="false"
                 onCancel={handleDetailCancel}
             >
-                <Card
-                    key={id}
-                    style={{ width: 300, margin: "10px" }}
-                    cover={
-                        <img
-                            alt="example"
-                            src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
-                            style={{
-                                width: "100%",
-                                height: "350px",
-                                objectFit: "cover",
-                            }}
-                        />
-                    }
-                >
-                    <Meta
-                        avatar={
-                            <Avatar
-                                src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
-                            />
-                        }
-                        title={name}
-                        description={description}
-                        // truncate 1 line
-                        style={{
-                            whiteSpace: "nowrap",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                            width: "!important 70%",
-                        }}
-                    />
-                </Card>
+                <DetailProduct key={id} ipfsHash={ipfsHash} name={name} description={description} />
             </Modal>
 
             <Card
@@ -133,7 +104,7 @@ const CartProduct = (props) => {
                         src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
                         style={{
                             width: "100%",
-                            height: "350px",
+                            height: "200px",
                             objectFit: "cover",
                         }}
                     />

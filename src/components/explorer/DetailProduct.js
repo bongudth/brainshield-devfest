@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import "../../assets/scss/DetailProduct.scss"
+import { List, Avatar } from 'antd';
 
 const DetailProduct = (props) => {
     return (
-        <img
-            alt="sample figure"
-            src={`https://ipfs.infura.io/ipfs/${props.ipfsHash}`}
-            style={{
-                width: "100%",
-                height: "350px",
-                objectFit: "cover",
-            }}
-        />
-		
+        <List.Item
+            key={props.key}
+            extra={
+                <img
+                    width={350}
+                    alt="product"
+                    src={`https://ipfs.infura.io/ipfs/${props.ipfsHash}`}
+                />
+            }
+        >
+            <List.Item.Meta
+                avatar={<Avatar src={`https://ipfs.infura.io/ipfs/${props.ipfsHash}`} />}
+                title={props.name}
+                description={props.description}
+            />
+        </List.Item>
     );
 };
 
