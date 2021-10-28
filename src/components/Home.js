@@ -24,8 +24,7 @@ const Home = () => {
             </p>
             <div className="home-content">
                 <div className="home-content-left">
-                    Application transparency of copyright ownership by
-                    blockchain technology and NFT
+                    Ứng dụng bảo vệ quyền sở hữu tác giả dành cho trẻ em
                 </div>
                 <div className="home-content-right">
                     <Tooltip title="Lead" placement="top">

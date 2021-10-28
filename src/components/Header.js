@@ -41,7 +41,7 @@ const Header = () => {
             </Link>
             <div className="header-right">
                 <Modal
-                    title="Account"
+                    title="Tài khoản"
                     width={350}
                     visible={isModalVisible}
                     onCancel={handleCancel}
@@ -49,12 +49,12 @@ const Header = () => {
                     className="modal-container"
                 >
                     <div className="modal-top">
-                        <div>Connected with MetaMask</div>
+                        <div>Đã kết nối với MetaMask</div>
                         <Button
                             className="button"
                             onClick={handleDeactivateAccount}
                         >
-                            Change
+                            Thay đổi
                         </Button>
                     </div>
                     <div className="modal-content">
@@ -69,33 +69,33 @@ const Header = () => {
                     </div>
                     <div className="modal-button">
                         <Button icon={<CopyOutlined />} className="button">
-                            Copy address
+                            Sao chép địa chỉ
                         </Button>
                         <a href={`https://ropsten.etherscan.io/address/${account}`} target="_blank" rel="noreferrer">
                             <Button
                                 icon={<FolderViewOutlined />}
                                 className="button"
                             >
-                                View on Explorer
+                                Xem trên Etherscan
                             </Button>
                         </a>
                     </div>
                     <div className="modal-bottom">
-                        <div>Your transactions willl appear here...</div>
+                        <div>Giao dịch của bạn sẽ hiển thị ở đây!</div>
                     </div>
                 </Modal>
                 <Link to="/explore">
-                    <Button className="button">Explore products</Button>
+                    <Button className="button">Khám phá</Button>
                 </Link>
                 {
                     account ? (
                         <Link to="/mine">
-                            <Button className="button">My products</Button>
+                            <Button className="button">Sản phẩm của tôi</Button>
                         </Link>
                     ) : null
                 }
                 <Link to="/new">
-                    <Button className="button">New product</Button>
+                    <Button className="button">Tạo sản phẩm mới</Button>
                 </Link>
                 {
                     account ? (
