@@ -33,7 +33,7 @@ const MyCard = (props) => {
                 title="Chi tiết sản phẩm"
                 visible={isModalDetailVisible}
                 width="60%"
-                button="false"
+                footer={null}
                 onCancel={handleDetailCancel}
             >
                 <DetailProduct
@@ -50,11 +50,11 @@ const MyCard = (props) => {
                         <img
                             alt="sample asset"
                             src={`https://ipfs.infura.io/ipfs/${ipfsHash}`}
-							style={{
+                            style={{
                                 width: "100%",
                                 height: "200px",
                                 objectFit: "cover",
-								cursor: "pointer"
+                                cursor: "pointer"
                             }}
                             onClick={showDetailHandler}
                         />
