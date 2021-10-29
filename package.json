@@ -13,6 +13,7 @@
         "antd": "^4.16.13",
         "axios": "^0.23.0",
         "babel-eslint": "^10.1.0",
+        "dotenv": "^10.0.0",
         "ethers": "^5.5.1",
         "google-auth-library": "^7.10.1",
         "ipfs-http-client": "^53.0.1",

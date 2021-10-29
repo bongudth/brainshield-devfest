@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEthers, useSendTransaction } from "@usedapp/core";
 import { useAssetsCall, useContractMethod } from "../../hooks/index";
 import "../../assets/scss/ExploreProducts.scss";
-import { Card, Avatar, Modal, Form, Input, Tooltip} from "antd";
+import { Card, Avatar, Modal, Form, Input, Tooltip } from "antd";
 import { HeartTwoTone, CoffeeOutlined } from "@ant-design/icons";
 import { utils } from "ethers";
 import DetailProduct from "./DetailProduct";
@@ -89,7 +89,7 @@ const CartProduct = (props) => {
                 title="Chi tiết sản phẩm"
                 visible={isModalDetailVisible}
                 width="60%"
-                button="false"
+                footer={null}
                 onCancel={handleDetailCancel}
             >
                 <DetailProduct
@@ -107,7 +107,7 @@ const CartProduct = (props) => {
                     <Tooltip
                         placement="top"
                         title={"Nhấn vào để xem chi tiết"}
-						arrowPointAtCenter
+                        arrowPointAtCenter
                     >
                         <img
                             alt="example"
@@ -116,7 +116,7 @@ const CartProduct = (props) => {
                                 width: "100%",
                                 height: "200px",
                                 objectFit: "cover",
-								cursor: "pointer"
+                                cursor: "pointer"
                             }}
                             onClick={showDetailHandler}
                         />
